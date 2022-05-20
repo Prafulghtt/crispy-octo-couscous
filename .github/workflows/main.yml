@@ -28,8 +28,7 @@ jobs:
       - name: Run a multi-line script
         run: |
         
-          echo:{{secrets:DOCKER_USER}}
-          echo:{{secrets:DOCKER_SECRET}}
+          
           docker build -t app .
           docker login -u ${{secrets.DOCKER_USER}} -p ${{secrets.DOCKER_SECRET}}
           docker tag app prafulght/kissanmarg
